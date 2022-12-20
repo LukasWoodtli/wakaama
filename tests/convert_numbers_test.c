@@ -445,6 +445,20 @@ static void test_utils_base64(void)
     }
 }
 
+static void test_base64Decode(void)
+{
+    const uint8_t expected[] = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz?kabc";
+    const size_t expected_len = sizeof(expected) - 1;  // ignore terminating NULL
+
+    const char data[] = "MDEyMzQ1Njc4OUFCQ0RFRkdISUpLTE1OT1BRUlNUVVZXWFlaYWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXo/a2FiYw";
+    const size_t data_len = sizeof(data) - 1;  // ignore terminating NULL
+
+    uint8_t output[expected_len];
+    const uint8_t decoded_size = utils_base64Decode(data, data_len, output, sizeof(output));
+    CU_ASSERT_EQUAL(decoded_size, expected_len);
+    CU_ASSERT_EQUAL(memcmp(expected, output, expected_len), 0);
+}
+
 static struct TestTable table[] = {
         { "test of utils_textToInt()", test_utils_textToInt },
         { "test of utils_textToUInt()", test_utils_textToUInt },
@@ -459,6 +473,7 @@ static struct TestTable table[] = {
         { "test of utils_floatToText(exponential)", test_utils_floatToTextExponential },
         { "test of utils_objLinkToText()", test_utils_objLinkToText },
         { "test of base64 functions", test_utils_base64 },
+        { "test of test_base64Decode", test_base64Decode },
         { NULL, NULL },
 };
 
