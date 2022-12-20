@@ -36,5 +36,6 @@ CU_ErrorCode create_block1_suit();
 CU_ErrorCode create_senml_json_suit();
 #endif
 CU_ErrorCode create_er_coap_parse_message_suit();
+CU_ErrorCode create_list_test_suit();
 
 #endif /* TESTS_H_ */
