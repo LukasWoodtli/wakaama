@@ -37,3 +37,6 @@ endif()
 
 # Add our unit tests to the "test" target
 add_test(NAME lwm2munittests_test COMMAND lwm2munittests)
+
+# Integration Tests with leshan
+add_subdirectory(leshan)

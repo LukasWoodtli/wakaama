@@ -1,0 +1,2 @@
+
+add_subdirectory(wakaama_test_server)
