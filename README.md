@@ -34,6 +34,9 @@ supported anymore.
      |    |
      |    +- integration       (pytest based integration tests implementing the OMA-ETS-LightweightM2M-V1_1-20190912-D specification
      |                          https://www.openmobilealliance.org/release/LightweightM2M/ETS/OMA-ETS-LightweightM2M-V1_1-20190912-D.pdf)
+     |
+     +- fuzzing                (fuzzing tests with libFuzzer)
+     |
      +- examples
           |
           +- bootstrap_server  (a command-line LWM2M bootstrap server)

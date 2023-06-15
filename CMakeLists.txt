@@ -7,3 +7,5 @@ add_subdirectory(examples)
 # Enable "test" target
 enable_testing()
 add_subdirectory(tests)
+
+add_subdirectory(fuzzing)
